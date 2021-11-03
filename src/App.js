@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="bg-white">
           <ul>
               <li>
                   <a href="/">Solve</a>
