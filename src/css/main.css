@@ -1,6 +1,6 @@
 html {
     background: #000;
-}
-    html header {
+    header {
         background: red;
     }
+}
