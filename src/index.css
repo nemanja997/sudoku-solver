@@ -29838,6 +29838,44 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+:root {
+  --indigo-400: #818CF8;
+}
+
+.sudoku-container {
+  width: 80vw;
+  height: 80vw;
+}
+
+@media (min-width: 600px) {
+  .sudoku-container {
+    width: 50vw;
+    height: 50vw
+  }
+}
+
+.cell {
+  border-top: 1px solid var(--indigo-400);
+  border-left: 1px solid var(--indigo-400);
+}
+
+.cell:nth-child(-n+2) {
+  border-top: 1px solid var(--indigo-400);
+}
+
+.cell:nth-child(odd) {
+  border-left: 1px solid var(--indigo-400);
+}
+
+.cell:nth-child(-n+3) {
+  border-top: none;
+}
+
+.cell:first-child,
+    .cell:nth-child(3n+1) {
+  border-left: none;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

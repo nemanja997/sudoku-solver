@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --indigo-400: #818CF8;
+}
+
+.sudoku-container {
+    width: 80vw;
+    height: 80vw;
+
+    @media (min-width: 600px) {
+        width: 50vw;
+        height: 50vw;
+    }
+}
+
+.cell {
+    border-top: 1px solid var(--indigo-400);
+    border-left: 1px solid var(--indigo-400);
+    &:nth-child(-n+2) {
+        border-top: 1px solid var(--indigo-400);
+    }
+    &:nth-child(odd) {
+        border-left: 1px solid var(--indigo-400);
+    }
+    &:nth-child(-n+3) {
+        border-top: none;
+    }
+    &:first-child,
+    &:nth-child(3n+1) {
+        border-left: none;
+    }
+}
