@@ -37,6 +37,7 @@ export default class Cell extends React.Component {
                     className="w-full h-full text-center bg-gray-800 focus:bg-indigo-900 focus:outline-none"
                     type="text"
                     name={`cell-${this.state.inputNumber}`}
+                    tabIndex={this.state.inputNumber}
                     maxLength="1"
                     value={this.state.value}
                     onInput={this.handleChange}/>
