@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Solve from './pages/Solve';
+import Examples from './pages/Examples';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Header from "./components/header";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <div className="text-indigo-400">
+        <BrowserRouter>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={Solve} />
+                <Route path="/examples" component={Examples} />
+            </Switch>
+        </BrowserRouter>
+    </div>,
   document.getElementById('root')
 );
 

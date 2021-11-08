@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+html, body {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
 :root {
     --indigo-400: #818CF8;
 }
@@ -11,8 +17,13 @@
     height: 80vw;
 
     @media (min-width: 600px) {
-        width: 50vw;
-        height: 50vw;
+        width: 400px;
+        height: 400px;
+    }
+
+    @media (min-width: 1000px) {
+        width: 700px;
+        height: 700px;
     }
 }
 

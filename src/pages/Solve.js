@@ -1,9 +1,8 @@
-import Header from './components/header'
-import Cell from './components/cell'
+import Cell from '../components/cell'
 import React from 'react'
 import { cloneDeep } from 'lodash'
 
-export default class App extends React.Component {
+export default class Solve extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -73,9 +72,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className="App text-indigo-400">
-                <Header />
-
+            <div>
                 <div className="grid mx-auto mt-10 grid-cols-3 gap-4 text-center sudoku-container">
                     {this.state.matrix.map((square,i) => {
                         return (

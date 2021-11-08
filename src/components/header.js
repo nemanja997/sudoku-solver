@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
     render () {
         return (
-            <header className="flex justify-center p-5 border-b border-indigo-400">
+            <header className="flex justify-center py-5 border-b border-indigo-400">
                 <ul className="flex center">
                     <li>
-                        <a href="/" className="p-5">Solve</a>
+                        <Link to="/" className="p-3">Solve</Link>
                     </li>
                     <li>
-                        <a href="/examples">See examples</a>
+                        <Link to="/examples" className="p-3">See examples</Link>
                     </li>
                 </ul>
             </header>

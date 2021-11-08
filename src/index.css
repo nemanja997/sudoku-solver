@@ -29838,6 +29838,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+html, body {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
 :root {
   --indigo-400: #818CF8;
 }
@@ -29849,8 +29855,15 @@ video {
 
 @media (min-width: 600px) {
   .sudoku-container {
-    width: 50vw;
-    height: 50vw
+    width: 400px;
+    height: 400px
+  }
+}
+
+@media (min-width: 1000px) {
+  .sudoku-container {
+    width: 700px;
+    height: 700px
   }
 }
 
