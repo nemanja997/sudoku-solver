@@ -1,19 +1,15 @@
 import React, {useEffect, useState} from 'react';
 
 export default function Cell (props) {
-    const [value, setValue] = useState('');
-    const [inputNumber, setInputNumber] = useState(0);
-
-    useEffect(() => {
-        setValue(props.value);
-        setInputNumber(props.position.x * 9 + props.position.y)
-    }, [])
+    const [value, setValue] = useState(props.value);
+    const [inputNumber, setInputNumber] = useState(props.position.x * 9 + props.position.y);
 
     const handleChange = async (event) => {
         const number = parseInt(event.target.value);
         const value = Number.isNaN(number) ? '' : number;
         setValue(value);
-        props.setValue(props.position, value);
+        await props.setValue(props.position, value);
+
 
         if (!Number.isNaN(number)) {
             // focus nex cell

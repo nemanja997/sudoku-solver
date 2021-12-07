@@ -15,10 +15,12 @@ export default function Solve(props) {
         ['', '', '', '', '', '', '', '', '']
     ])
 
-    const setValue = (position, value) => {
-        const matrixCopy = cloneDeep(matrix);
-        matrixCopy[position.x][position.y] = value;
-        setMatrix(matrixCopy);
+    const setValue = async (position, value) => {
+        await setMatrix(prevMatrix => {
+            const matrixCopy = cloneDeep(prevMatrix);
+            matrixCopy[position.x][position.y] = value;
+            return matrixCopy;
+        })
     }
 
     const isValid = (board, row, col, k) => {
