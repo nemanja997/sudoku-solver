@@ -11,7 +11,8 @@ export default function Cell (props) {
 
     const handleChange = async (event) => {
         const number = parseInt(event.target.value);
-        setValue(Number.isNaN(number) ? '' : number);
+        const value = Number.isNaN(number) ? '' : number;
+        setValue(value);
         props.setValue(props.position, value);
 
         if (!Number.isNaN(number)) {
