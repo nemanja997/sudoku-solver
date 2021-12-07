@@ -72,7 +72,7 @@ export default class Solve extends React.Component {
     render() {
         return (
                 <div className="container mx-auto text-center">
-
+                    Examples
                 </div>
         );
     }

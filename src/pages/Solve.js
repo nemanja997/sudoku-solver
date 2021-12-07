@@ -73,7 +73,10 @@ export default class Solve extends React.Component {
     render() {
         return (
             <div>
-                <div className="grid mx-auto mt-10 grid-cols-3 gap-4 text-center sudoku-container">
+                <div className="text-center mb-6 mt-10 text-2xl">
+                    Enter your numbers...
+                </div>
+                <div className="grid mx-auto grid-cols-3 gap-4 text-center sudoku-container">
                     {this.state.matrix.map((square,i) => {
                         return (
                             <div
