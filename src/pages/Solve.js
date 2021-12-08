@@ -69,7 +69,7 @@ export default function Solve(props) {
                 {matrix.map((square, i) => {
                     return (
                         <div
-                            className="text-4xl grid grid-cols-3 border border-indigo-400"
+                            className="text-xl lg:text-3xl xl:text-4xl grid grid-cols-3 border border-indigo-400"
                             key={square.toString() + i}>
                             {square.map((val, j) => {
                                 const x = (Math.floor(i / 3) * 3) + Math.floor(j / 3);

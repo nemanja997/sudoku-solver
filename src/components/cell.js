@@ -21,7 +21,7 @@ export default function Cell (props) {
     }
 
     return (
-        <div className="text-4xl cell">
+        <div className="cell">
             <input
                 className="w-full h-full text-center bg-gray-800 focus:bg-indigo-900 focus:outline-none"
                 type="text"
