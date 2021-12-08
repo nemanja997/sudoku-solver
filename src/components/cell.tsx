@@ -1,19 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, BaseSyntheticEvent } from 'react';
 
-export default function Cell (props) {
+interface Position {
+    x: number;
+    y: number;
+}
+interface Props {
+    position: Position;
+    value: string | number;
+    setValue: (pos: Position, value: number | string) => any;
+}
+export default function Cell (props: Props) {
     const [value, setValue] = useState(props.value);
     const [inputNumber, setInputNumber] = useState(props.position.x * 9 + props.position.y);
 
-    const handleChange = async (event) => {
+    const handleChange = async (event: BaseSyntheticEvent) => {
         const number = parseInt(event.target.value);
-        const value = Number.isNaN(number) ? '' : number;
+        const value:string | number = Number.isNaN(number) ? '' : number;
         setValue(value);
         await props.setValue(props.position, value);
 
 
         if (!Number.isNaN(number)) {
             // focus nex cell
-            const nextCell = document.querySelector(`input[name=cell-${inputNumber + 1}]`);
+            const nextCell: HTMLElement | null = document.querySelector(`input[name=cell-${inputNumber + 1}]`);
             if (nextCell !== null) {
                 nextCell.focus();
             }
@@ -27,7 +36,7 @@ export default function Cell (props) {
                 type="text"
                 name={`cell-${inputNumber}`}
                 tabIndex={inputNumber + 1}
-                maxLength="1"
+                maxLength={1}
                 value={value}
                 onInput={handleChange}/>
         </div>

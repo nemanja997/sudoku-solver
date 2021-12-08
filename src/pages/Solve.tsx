@@ -2,8 +2,13 @@ import Cell from '../components/cell'
 import React, {useState} from 'react'
 import {cloneDeep} from 'lodash'
 
-export default function Solve(props) {
-    const [matrix, setMatrix] = useState([
+interface Position {
+    x: number;
+    y: number;
+}
+
+export default function Solve() {
+    const [matrix, setMatrix] = useState<(string | number)[][]>([
         ['', '', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', '', ''],
@@ -15,15 +20,15 @@ export default function Solve(props) {
         ['', '', '', '', '', '', '', '', '']
     ])
 
-    const setValue = async (position, value) => {
+    const setValue = async (position: Position, value: string | number) => {
         await setMatrix(prevMatrix => {
-            const matrixCopy = cloneDeep(prevMatrix);
+            const matrixCopy:(string | number)[][] = cloneDeep(prevMatrix);
             matrixCopy[position.x][position.y] = value;
             return matrixCopy;
         })
     }
 
-    const isValid = (board, row, col, k) => {
+    const isValid = (board:(string | number)[][], row:number, col:number, k:number) => {
         for (let i = 0; i < 9; i++) {
             const m = 3 * Math.floor(row / 3) + Math.floor(i / 3);
             const n = 3 * Math.floor(col / 3) + i % 3;
@@ -40,7 +45,7 @@ export default function Solve(props) {
         setMatrix(cloneDeep(board));
     }
 
-    const sudokuSolver = (board) => {
+    const sudokuSolver = (board:(string | number)[][]) => {
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
                 if (board[i][j] === '') {
