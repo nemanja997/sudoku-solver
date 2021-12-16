@@ -19,7 +19,6 @@ export default function Cell (props: Props) {
         setValue(value);
         await props.setValue(props.position, value);
 
-
         if (!Number.isNaN(number)) {
             // focus nex cell
             const nextCell: HTMLElement | null = document.querySelector(`input[name=cell-${inputNumber + 1}]`);
