@@ -1,4 +1,4 @@
-import React, {useEffect, useState, BaseSyntheticEvent } from 'react';
+import React, {useState, BaseSyntheticEvent, FormEventHandler} from 'react';
 
 interface Position {
     x: number;
@@ -13,8 +13,8 @@ export default function Cell (props: Props) {
     const [value, setValue] = useState(props.value);
     const [inputNumber, setInputNumber] = useState(props.position.x * 9 + props.position.y);
 
-    const handleChange = async (event: BaseSyntheticEvent) => {
-        const number = parseInt(event.target.value);
+    const handleChange: FormEventHandler = async (event: React.FormEvent<HTMLInputElement>) => {
+        const number = parseInt(event.currentTarget.value);
         const value:string | number = Number.isNaN(number) ? '' : number;
         setValue(value);
         await props.setValue(props.position, value);
