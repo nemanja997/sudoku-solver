@@ -1,4 +1,4 @@
-import React, {useState, BaseSyntheticEvent, FormEventHandler} from 'react';
+import React, {useState, FormEventHandler} from 'react';
 
 interface Position {
     x: number;
